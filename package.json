@@ -8,20 +8,27 @@
   "scripts": {
     "dev": "nextron",
     "build": "nextron build",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "npm run build && electron-builder"
   },
-  "build":{
-    "appId":"com.soft.autoupdater",
-    "productName":"Autouodater app",
-    "win":{
-      "target":"nsis"
+  "repository": "https://github.com/freebat/electron-autoupdater",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
+  },
+  "build": {
+    "appId": "com.soft.autoupdater",
+    "productName": "Discord",
+    "win": {
+      "target": "nsis"
     },
-    "directories":{
-      "output":"dist"
+    "directories": {
+      "output": "dist"
     }
   },
   "dependencies": {
     "child_process": "^1.0.2",
+    "electron-log": "^4.4.8",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
     "electron-updater": "^6.1.4",
