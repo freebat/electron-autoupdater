@@ -7,13 +7,24 @@
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
-    "build": "nextron build --win --x64",
+    "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
+  },
+  "build":{
+    "appId":"com.soft.autoupdater",
+    "productName":"Autouodater app",
+    "win":{
+      "target":"nsis"
+    },
+    "directories":{
+      "output":"dist"
+    }
   },
   "dependencies": {
     "child_process": "^1.0.2",
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.4",
     "sudo-prompt": "^9.2.1",
     "winreg": "^1.2.4"
   },
